@@ -16,8 +16,13 @@ function App() {
       body: JSON.stringify(Newuser),
     })
       .then((res) => res.json())
-      .then((data) => console.log(data));
-    form.reset();
+      .then((data) => {
+        console.log(data);
+        if (data.insertedId) {
+          alert("Users Added SuccessFully");
+        }
+        form.reset();
+      });
   };
   return (
     <>
