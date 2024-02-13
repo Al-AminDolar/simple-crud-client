@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 export default function Users() {
   const handleDeleteUser = (_id) => {
@@ -23,6 +23,9 @@ export default function Users() {
         {users.map((user) => (
           <p key={user._id}>
             {user.name}: {user.email}{" "}
+            <Link to={`/update/${user._id}`}>
+              <button>Update</button>
+            </Link>
             <button onClick={() => handleDeleteUser(user._id)}>X</button>
           </p>
         ))}
