@@ -18,6 +18,9 @@ export default function Users() {
   const users = useLoaderData();
   return (
     <div>
+      <h2>
+        <Link to="/">Home</Link>
+      </h2>
       <h2>{users.length}</h2>
       <div>
         {users.map((user) => (

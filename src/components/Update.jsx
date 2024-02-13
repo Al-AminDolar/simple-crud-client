@@ -1,4 +1,4 @@
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Update = () => {
   const loadUser = useLoaderData();
@@ -28,6 +28,9 @@ const Update = () => {
   };
   return (
     <div>
+      <h2>
+        <Link to="/">Home</Link>
+      </h2>
       <h3>Update information of {loadUser.name}</h3>
       <form onSubmit={handleUpdate}>
         <input type="text" defaultValue={loadUser?.name} name="name" id="" />
